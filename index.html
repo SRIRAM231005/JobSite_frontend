@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,
+700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Job Portal</div>
+        <ul class="nav-links">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">ALL JOBS</a></li>
+            <li><a href="#">INTERNSHIPS</a></li>
+            <li><a href="#">CONTACT US</a></li>
+        </ul>
+        <!--<input type="text" placeholder="Search Jobs..." class="search-bar">-->
+        <div style="display: block;position: relative;">
+            <div class="Account">
+                <a href="#" onclick="displayAccount();">ACCOUNTS</a>
+                <img src="accountsLogo.png" style="border-radius: 50%;height:30px;width:30px;">
+            </div>
+            <div class="AccountBox" style="display: none;">
+                <div class="displayacc">hi</div>
+            </div>
+        </div>
+    </nav>
+    
+
+    <center><div class="main-content">
+        <div class="main-scroll">
+            <div class="main-scroll-box">
+                <div><img class="masterimg" src="img1.png"></div>
+                <div><img class="masterimg" src="img2.jpeg"></div>
+                <div><img class="masterimg" src="img3.jpg"></div>
+                <div><img class="masterimg" src="img1.png"></div>
+            </div>
+            <div class="contento"></div>
+            <div class="contento2">
+                <div style="margin-top:150px;">Best Place To Find Jobs</div>
+                <div style="color: aqua;font-size: 20px;margin-top: 10px;">Don't Just Find a Job, Build a Career You Love</div>
+                <div style="color: rgb(173, 177, 177);font-size: 15px;margin-top: 40px;width: 30%;line-height: 1.7;">"Take the next big step in
+                    your career. Explore thousands of job listings from top companies, filter by location or industry,
+                    and find your perfect match. Your dream job is just a click away—start now and shape your future with us."</div>
+            </div>
+            <div class="main-section-box">
+                <div class="filter-section">
+                    <select id="location-filter" onchange="filterJobs();">
+                        <option value="">Location</option>
+                        <option value="New York">New York</option>
+                        <option value="San Francisco">San Francisco</option>
+                        <option value="Seattle">Seattle</option>
+                    </select>
+                    <select id="type-filter" onchange="filterJobs();">
+                        <option value="">Job Type</option>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Part-time">Part-time</option>
+                    </select>
+                </div>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search for jobs, companies, or locations...">
+                    <button class="search-button">Search</button>
+                </div>            
+            </div>
+        </div>
+        <div class="iconright2">
+            <img src="#" style="height: 46px; width: 0; display: none;" onclick="transright2();"> 
+        </div>
+        <div class="iconleft2">
+            <img src="#" style="height: 46px; width: 0; transform: scaleX(-1); display: none;" onclick="transleft2();">
+        </div>  
+        <div class="bottom">
+            <div class="dot" style="background-color: white;"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div><center>
+
+
+    <!-- Main Section -->
+    <div class="main-section">
+        <div class="job-list">
+            <!-- Job Items will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Job Details Modal -->
+    <div class="job-details-modal" id="jobDetailsModal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2 id="job-title" style="margin-bottom: 10px;">Job Title</h2>
+            <p id="job-company" style="margin-bottom: 5px;">Company: </p>
+            <p id="job-location" style="margin-bottom: 5px;">Location: </p>
+            <p id="job-description" style="margin-bottom: 10px;">Description: </p>
+            <button onclick="applyForJob()">Apply</button>
+        </div>
+    </div>
+
+    <footer>
+        <!--<div class="footer1" style="text-align: left;">
+            <ul>
+                <p>Get Us To Know</p>
+                <a>About Us</a>
+                <a>Protect And Build</a>
+                <a>Careers</a>
+                <a>Sell on TechBazaar</a>
+            </ul>
+            <ul>
+                <p>Help</p>
+                <a>Payments</a>
+                <a>Shipping</a>
+                <a>Cancellation & Return</a>
+                <a>FAQ</a>
+                <a>Report Infringement</a>
+            </ul>
+            <ul>
+                <p>Connect With Us</p>
+                <a>Facebook</a>
+                <a>Twitter</a>
+                <a>Instagram</a>
+            </ul>
+            <ul>
+                <p>Get Us To Know</p>
+                <a>About Us</a>
+                <a>Protect And Build</a>
+                <a>Careers</a>
+                <a>Sell on TechBazaar</a>
+            </ul>
+        </div>
+        <div class="footer3">
+            <img src="Images/logo web.png" alt="Comp" style="height: 70px;">
+        </div>-->         
+        <div class="footer2">
+          <p style="font-size: 15px; font-family: 'Poppins',sans-serif; margin: 10px;">&copy; All Rights Reserved With Author: B.Sriram</p>
+          <div style="padding-bottom: 10px;"><a href="mailto:sriram.bangam@gmail.com" style="color: #f19b1a;">sriram.bangam@gmail.com</a></div>
+        </div>  
+    </footer> 
+
+    <script src="index.js"></script>
+    <script>
+
+
+
+        /*Translate on button click*/
+        let scale = 0;
+        let rep = 1;
+        let acer ;
+        function transright1(){
+            const right = document.querySelector('.iconright');
+            const srci = document.querySelector('.innerBox1');
+            acer = rep*300;
+            if(scale > -350){
+                srci.style.transform = `translateX(${scale - 350}px)`;
+                scale = scale - 350;
+                rep++;
+            }    
+        };
+        let lep = 1;
+        let acel = 300;
+        function transleft1(){
+            const left = document.querySelector('.iconleft');
+            const srcl = document.querySelector('.innerBox1');
+            if(scale < 0){
+                srcl.style.transform = `translateX(${scale + 350}px)`;
+                scale = scale + 350;
+                lep++;
+            }
+        };
+        
+        /**/
+        let scale1 = 0;
+        let scaleCount=0;
+        let dots;
+        let a = 0;
+        function transright2(){
+            const right1 = document.querySelector('.main-scroll-box');
+            if(scale1 > -300){//5400
+                right1.style.transform = `translateX(${scale1 - 100}vw)`;//1800
+                scale1 = scale1 - 100;//1800
+                scaleCount = (scale1/100) * -1;//1800
+                dots = document.querySelectorAll('.dot');
+                dots.forEach((dots)=>{
+                    dots.style.backgroundColor = 'transparent';
+                });
+                dots[scaleCount].style.backgroundColor = 'white';
+            }else{
+                a=1;
+            }
+        };
+        function transleft2(){
+            const left1 = document.querySelector('.main-scroll-box');
+            if(scale1 < 0){
+                left1.style.transform = `translateX(${scale1 + 100}vw)`;//1800
+                scale1 = scale1 + 100;//
+                scaleCount = (scale1/100) * -1;//
+                dots = document.querySelectorAll('.dot');
+                dots.forEach((dots)=>{
+                    dots.style.backgroundColor = 'transparent';
+                });
+                dots[scaleCount].style.backgroundColor = 'white';
+            }else{
+                a=1;
+            }
+        };
+        function trans(){
+            setInterval(()=>{
+                transright2();
+                
+                scaleCount = (scale1/100) * -1;//1800
+                dots = document.querySelectorAll('.dot');
+                dots.forEach((dots)=>{
+                    dots.style.backgroundColor = 'transparent';
+                });
+                dots[scaleCount].style.backgroundColor = 'white';
+                
+                if(a === 1){
+                    const right1 = document.querySelector('.main-scroll-box');
+                    right1.style.transform = `translateX(0vw)`;
+                    scale1 = 0;
+                    scaleCount = 0;
+                    a=0;
+                    dots.forEach((dots)=>{
+                    dots.style.backgroundColor = 'transparent';
+                    });
+                    dots[0].style.backgroundColor = 'white';
+                }
+            },5000);
+        };
+        setTimeout(()=>{
+            trans();
+        },500);
+
+
+
+
+        function displayAccount(){
+            let accountBox = document.querySelector('.AccountBox');
+            if(accountBox.style.display === 'none'){
+                accountBox.style.display = 'block';
+            }else{
+                accountBox.style.display = 'none';
+            }
+        }
+
+        const data = {
+                username: 'b_sriram',
+                email: 'sri@gmail.com',
+                userRole: 'Employee',   
+        };
+        localStorage.setItem("resultMain" , JSON.stringify(data));
+
+        function disp(){
+            let resultMain = JSON.parse(localStorage.getItem("resultMain"));
+            if(! resultMain){
+                displayLogin();
+            }else{
+                if(resultMain.userRole === 'Employee'){
+                    const displayacc = document.querySelector('.displayacc');
+                    displayacc.innerHTML = `<div style="text-align:center;"><img src="accountsLogo.png" style="border-radius:50%;height:70px;width:70px;"></div>
+                                            <div style="text-align:center;font-size:23px;margin-bottom:5px;">Hi, ${resultMain.username}!</div>
+                                            <div style="text-align:center;margin-top:0;font-size:15px;color:#c9c9ca;">${resultMain.email}</div>
+                                            <div style="margin-top:15px;background-color:#141414;padding:10px;border-radius:10px;">${resultMain.userRole}</div>
+                                            <div style="border-bottom: 1px solid #5c5b5b;"></div>
+                                            <div style="font-size:13px;color: #c9c9ca; text-align:left;">More Options:</div>
+                                            <div style="margin-top:15px;background-color:#141414;border-radius:10px;">
+                                                <div style="padding:15px;border-bottom: 1px solid #5c5b5b;cursor:pointer;margin:0;">Find Job</div>
+                                                <div style="padding:15px;cursor:pointer;margin:0;">Change Theme</div>
+                                            </div>
+                                            <button onclick="userLogout();" style="padding-left:30px;padding-right:30px;">Logout</button>`;
+                }
+            }
+        }    
+
+
+        /*let dialoguee;
+        function userLogin() {
+            const body = document.body;
+            dialoguee = document.createElement('dialog');
+            dialoguee.classList.add('d5');
+            dialoguee.innerHTML = `<div style="margin-bottom:20px;">User Login</div>
+                                  <input type="text" id="username3" placeholder="User Name"><br><br>
+                                  <input type="text" id="email3" placeholder="Email"><br><br>
+                                  <input type="text" id="userRole" placeholder="User Role"><br><br>
+                                  <input type="password" id="password3" placeholder="password"><br><br>
+                                  <button type="submit" onclick="userLog();">Submit</button>`;
+            body.appendChild(dialoguee);                      
+            dialoguee.showModal();
+        }
+
+        let dialogue1;
+        function userLogout(){
+            const body = document.body;
+            dialogue1;
+            dialogue1 = document.createElement('dialog');
+            dialogue1.classList.add('d6');
+            dialogue1.innerHTML = `<div>Are you sure you want to logout</div>
+                                  <button onclick="Logout();displayLogin();dialogueclose();">Logout</button>`;
+            body.appendChild(dialogue1);
+            dialogue1.showModal();                      
+        }
+
+        //
+        function Logout(){
+            localStorage.removeItem("resultMain");
+        }*/
+
+
+        function displayLogin(){
+            const displayacc = document.querySelector('.displayacc');
+            displayacc.innerHTML = `<div style="font-size:20px; margin-bottom:20px;">You have not Login</div>
+                                    <div style="margin-bottom:40px;"><button onclick="userLogin();" style="padding-left:30px;padding-right:30px;">Sign In</button></div>
+                                    <div style="font-size:15px;">Create an Account <a href="userreg.html">Sign Up</a></div>`;
+        }
+
+        /*function dialogueclose(){
+            dialogue1.close();
+        }
+
+        async function userLog() {
+            const username = document.getElementById('username3').value;
+            const email = document.getElementById('email3').value;
+            const userRole = document.getElementById('userRole').value;
+            const password = document.getElementById('password3').value;
+
+            const data = {
+                username: 'b_sriram',
+                email: 'sri@gmail.com',
+                userRole: 'Employee',   
+            };
+
+            console.log(data);
+            localStorage.setItem("resultMain" , JSON.stringify(data));
+            dialoguee.close();
+            displayAccount();
+            disp();
+        }*/
+
+        disp();
+
+    </script>
+</body>
+</html>
